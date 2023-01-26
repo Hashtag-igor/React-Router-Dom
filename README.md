@@ -12,31 +12,31 @@ ________________________________________________________________________________
 
 import { createBrowserRouter, RouterProvider, Outlet, Link, useParams, useNavigate } from "react-router-dom";
 
-*createBrowserRouter*
+*createBrowserRouter:*
 Vai receber as rotas configuradas (dentro dele vai ter um array);
 
-*RouterProvider*
+*RouterProvider:*
 Vai receber a const "router" (que tem as rotas) e passar para o projeto por meio de props;
 
-*Outlet*
+*Outlet:*
 Serve para reaproveitar a estrutura, para não ter que repetir o código. Onde o Outlet for colocado, vai ser onde o conteúdo do router vai ser colocado. Cada página do router será inserida ali;
 
-*Link*
+*Link:*
 Funciona como uma tag <a>. Ao ser clicado, manda o usuario para uma rota especifica (rota definida dentro do próprio link) ex: <Link to="/algumarota">AlgumaRota<Link/>. Sempre depois do to="", vem o "/" + o nome da rota que você quer difinir, a nãoo ser que você queira colocar na página padrão, ai basta apenas colocar to="/"
 
-*useParams*
+*useParams:*
 Faz com que possamos extrair informações que vem da URL, entregue em forma de obj.
 ex:  const {id} = useParams()  //Esse nome "id" tem que combinar com o nome passado lá no "path" do index.js, no element.
 Seria mais interessante ainda caso estivesse utilizando um banco de dados, por que definiria uma rota especifica propria para cada usuario salvo, buscando uma id do proprio banco de dados.
 
-*useNavigate*
+*useNavigate:*
 Permite a navegação entre páginas na parte da lógica. Por exemplo, você está para enviar a parte de cadastro do seu formulario, quando clicar no botão e em enviar, automaticamente você voltará para a página de home do projeto. Você pode usar na função do botão o "Navigate" e colocar para uma rota que você queria (no ex acima foi para a home), então ficaria por exemplo:
     function submit(){
       console.log("Retornando para a home")    //Aqui poderia retornar algo para o banco de dados caso estivesse usando
       return navigate("/")                     //Ao executar a função, será renderizado para a rota "/";
     }
 
-*Navigate*
+*Navigate:*
 Suponhamos que umma página do projeto deixou de existir por causa de um link antigo, por exemplo. Ao inves do usuario cair nessa rota que não existe mais, o componente exportado do react-router-dom "Navigate" transporta essa rota antiga, para uma nova.
 ex: {
       path: "oldcontact",                     
